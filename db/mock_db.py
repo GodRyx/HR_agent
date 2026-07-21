@@ -64,6 +64,7 @@ def init_db(db_path:Path=DB_PATH)->sqlite3.Connection:
         cursor.execute("insert into leave_balances values(?,?,?)",bal)
     conn.commit()
 
+
     print("[success]数据库已创建成功")
     print(f"数据库路径{db_path}")
     return conn
