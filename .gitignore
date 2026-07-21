@@ -13,6 +13,8 @@ env/
 venv/
 .env
 .venv/
+data/
+.txt
 
 # ===== IDE / 编辑器 =====
 .idea/
