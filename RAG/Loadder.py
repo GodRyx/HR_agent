@@ -5,7 +5,7 @@ from config import embedding
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 loader = TextLoader(
-    file_path=os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\datas\\员工手册.txt",
+    file_path=os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\data\\员工手册.txt",
     encoding="utf-8"
 )
 
