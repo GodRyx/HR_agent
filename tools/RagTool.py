@@ -29,9 +29,11 @@ def search_hr_policy(query:str):
         docs = retriever.invoke(q)
         all_condition_docs.extend(docs)
 
-    # 文档去重，采用将文档内容收集为集合，利用集合不可重复性进行去重
+    # 文档去重，1、采用键值对键唯一的方式，规定键值对表达式，将page.content作为键，doc作为值，进行遍历取值，然后获得值，即为拿到文档
     unique_docs = {doc.page_content: doc for doc in all_condition_docs}.values()
     unique_docs =list(unique_docs)
+    # unique_doc_pages={doc.page_content for doc in all_condition_docs} # 如果采用集合，仅仅只能获取到page_content的值,无法保留doc导致后续无法拼装打分的doc
+    # unique_doc_pages=list(unique_doc_pages)
     if not unique_docs:
         return "没有相关政策，请咨询HR人工"
 

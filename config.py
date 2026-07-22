@@ -35,5 +35,5 @@ local_llm = ChatOpenAI(
     api_key="gvjgv"
 )
 
-r = local_llm.invoke("你好")
-print(r)
+# r = local_llm.invoke("你好")
+# print(r)
