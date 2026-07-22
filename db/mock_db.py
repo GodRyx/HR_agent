@@ -44,13 +44,15 @@ def init_db(db_path:Path=DB_PATH)->sqlite3.Connection:
         )
     
     """)
-    cursor.execute("""delete from employees""")
-    cursor.execute("""delete from leave_balances""")
+    cursor.execute("""delete  from leave_balances""")
+    cursor.execute("""delete  from employees""")
+
+
     text_employees = [
         ("1001","张三","P5","南京",5,18000),
-        ("1002", "张三", "P4", "北京", 4, 15000),
-        ("1003", "张三", "P3", "上海", 3, 12000),
-        ("1004", "张三", "P2", "杭州", 2, 10000),
+        ("1002", "李四", "P4", "北京", 4, 15000),
+        ("1003", "王五", "P3", "上海", 3, 12000),
+        ("1004", "赵六", "P2", "杭州", 2, 10000),
     ]
     test_balances =[
         ("1001",6,10),
@@ -80,9 +82,8 @@ def close(conn:sqlite3.Connection):
         print("数据库已经关闭")
 
 if __name__ == "__main__":
-    conn = get_conn()
+
     conn1 = init_db()
-    conn2 = get_conn()
-    close(conn)
+
+
     close(conn1)
-    close(conn2)
