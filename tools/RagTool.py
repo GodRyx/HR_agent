@@ -29,6 +29,7 @@ def search_hr_policy(query:str):
         docs = retriever.invoke(q)
         all_condition_docs.extend(docs)
 
+
     # 文档去重，1、采用键值对键唯一的方式，规定键值对表达式，将page.content作为键，doc作为值，进行遍历取值，然后获得值，即为拿到文档
     unique_docs = {doc.page_content: doc for doc in all_condition_docs}.values()
     unique_docs =list(unique_docs)
